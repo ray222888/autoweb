@@ -14,7 +14,6 @@ def readUsers(path):
         row = worksheet.row(i)
         for j in range(1, worksheet.ncols):
             list.append(worksheet.cell_value(i, j))
-            print(worksheet.cell_value(i, j), "\t", end="")
         print()
     return list   
 
