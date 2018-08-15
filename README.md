@@ -34,3 +34,5 @@ $ git remote rm origin
 （3）之后，需要将修改push到GitHub上
 
 git push -u origin master
+
+#dervice->network setting->port forwarding
