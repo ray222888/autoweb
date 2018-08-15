@@ -36,3 +36,4 @@ $ git remote rm origin
 git push -u origin master
 
 #dervice->network setting->port forwarding
+# test.sh 加s权限 chmod +s test.sh
