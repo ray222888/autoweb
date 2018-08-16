@@ -213,5 +213,5 @@ def login_from(object,username,password):
      userpasbutton=browser.find_element_by_css_selector('#loginButton_0');
      userpasbutton.click();
      sleep(15)
-    except Exception as ex: prin (ex)
+    except Exception as ex: print (ex)
 

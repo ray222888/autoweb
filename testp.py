@@ -49,10 +49,11 @@ for arg in casesList[0:]:
        browser.get(datalist[0])
       else:
        browser.get(url)
-      eventdatalist =arg.split(':')
+
      except Exception as ex:
          print(ex)
-         
+     eventdatalist =arg.split(':')
+
      try:
       if eventdatalist[0]=='user1':
         eventdatalist[0]=UPlist[1]
@@ -105,11 +106,11 @@ for arg in casesList[0:]:
      listinput1=FillForm.fill_from(browser,eventdatalist[1])
      if listinput1 == 'error':
         browser.get_screenshot_as_file(str(caserow)+'.png')
-        ReadExcel.excelUpdate(cases,"Fail,"+str(caserow)+'.png',caserow)
+        ReadExcel.excelUpdate(cases+",Fail,"+str(caserow)+'.png,'+caserow)
         clientSend.resultSend(cases+",Fail,"+str(caserow)+'.png,'+caserow)
         break
      else:
-         ReadExcel.excelUpdate(cases,"Pass",caserow)
+         ReadExcel.excelUpdate(cases+",Pass,"+caserow)
          browser.get_screenshot_as_file(str(caserow)+"_"+str(step)+'.png')
          if (step==datalist.amount()):
              clientSend.resultSend(cases+",Pass,"+caserow)
