@@ -9,7 +9,6 @@ server.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 # indefinitely when trying to receive data.
 server.settimeout(0.2)
 server.bind(("", 44444))
-message = b"test result 2"
 
 client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
 client.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -19,5 +18,4 @@ while True:
  print("received message: %s"%data)
  #do something
  os.system("./test.sh")
- server.sendto(message, ('<broadcast>', 37021))
- print("result message sent!")
+ print("test start")
