@@ -205,11 +205,13 @@ def fill_from(object,strAction):
 def login_from(object,username,password):
     browser=object
     sleep(15)
-    user=browser.find_element_by_css_selector('#idToken1');
-    user.send_keys(username);
-    userpas=browser.find_element_by_css_selector('#idToken2');
-    userpas.send_keys(password);
-    userpasbutton=browser.find_element_by_css_selector('#loginButton_0');
-    userpasbutton.click();
-    sleep(15)
+    try:
+     user=browser.find_element_by_css_selector('#idToken1');
+     user.send_keys(username);
+     userpas=browser.find_element_by_css_selector('#idToken2');
+     userpas.send_keys(password);
+     userpasbutton=browser.find_element_by_css_selector('#loginButton_0');
+     userpasbutton.click();
+     sleep(15)
+    except Exception as ex: prin (ex)
 
