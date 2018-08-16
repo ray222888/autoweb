@@ -35,7 +35,7 @@ def readCases(path):
     return clist
 
 def excelUpdate(resultstrclient):
-    liststr=resultstrclient.split(',')
+    liststr=resultstrclient.split(':')
     excel=liststr[0]
     resultstr=liststr[1]
     caseid=liststr[2]

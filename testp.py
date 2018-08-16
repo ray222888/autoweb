@@ -106,14 +106,14 @@ for arg in casesList[0:]:
      listinput1=FillForm.fill_from(browser,eventdatalist[1])
      if listinput1 == 'error':
         browser.get_screenshot_as_file(str(caserow)+'.png')
-        ReadExcel.excelUpdate(cases+",Fail,"+str(caserow)+'.png,'+str(caserow))
-        clientSend.resultSend(cases+",Fail,"+str(caserow)+'.png,'+str(caserow))
+        ReadExcel.excelUpdate(cases+":Fail,"+str(caserow)+'.png:'+str(caserow))
+        clientSend.resultSend(cases+":Fail,"+str(caserow)+'.png:'+str(caserow))
         break
      else:
-         ReadExcel.excelUpdate(cases+",Pass,"+str(caserow))
+         ReadExcel.excelUpdate(cases+":Pass:"+str(caserow))
          browser.get_screenshot_as_file(str(caserow)+"_"+str(step)+'.png')
          if (step==datalist.amount()):
-             clientSend.resultSend(cases+",Pass,"+str(caserow))
+             clientSend.resultSend(cases+":Pass:"+str(caserow))
      #validate after preview,last submit
      #FormValidation.from_value(browser,listinput,cases,caserow,eventdatalist[1])
      url = browser.current_url
