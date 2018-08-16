@@ -43,14 +43,16 @@ for arg in casesList[0:]:
       browser.implicitly_wait(2)
      except Exception as ex: 
          print(ex)
-     #split data ,  
-     if step==0:
-      browser.get(datalist[0])
-     else:
-       browser.get(url)  
-     print(arg)
-     eventdatalist =arg.split(':')
-     print(eventdatalist)
+     #split data ,
+     try:
+      if step==0:
+       browser.get(datalist[0])
+      else:
+       browser.get(url)
+      eventdatalist =arg.split(':')
+     except Exception as ex:
+         print(ex)
+         
      try:
       if eventdatalist[0]=='user1':
         eventdatalist[0]=UPlist[1]
