@@ -34,15 +34,17 @@ def readCases(path):
         print(clist)
     return clist
 
-def excelUpdate(resultstr):
-    liststr=resultstr.split(',')
+def excelUpdate(resultstrclient):
+    liststr=resultstrclient.split(',')
     excel=liststr[0]
     resultstr=liststr[1]
     caseid=liststr[2]
     wb = xlrd.open_workbook(excel)
     newb = copy(wb)
     wbsheet = newb.get_sheet(0)
-    resultstrlist = resultstr.split(',')
+    try:
+     resultstrlist = resultstr.split(',')
+    except Exception as ex:print(ex)
     wbsheet.write(caseid,0,resultstrlist[0])
     if len(resultstrlist)>1:
         try:
