@@ -51,17 +51,5 @@ def excelUpdate(resultstr):
         except Exception as e: print(e)
     newb.save(excel)
 
-def excelUpdate(excel,resultstr,caseid):
-    wb = xlrd.open_workbook(excel)
-    newb = copy(wb)
-    wbsheet = newb.get_sheet(0)
-    resultstrlist = resultstr.split(',')
-    wbsheet.write(caseid,0,resultstrlist[0])
-    if len(resultstrlist)>1:
-     try:    
-      wbsheet.write(caseid,1,resultstrlist[1])
-      wbsheet.write(caseid,2,resultstrlist[2])
-     except Exception as e: print(e)
-    newb.save(excel)
 
 
