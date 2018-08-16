@@ -12,9 +12,14 @@ import ReadExcel
 import clientSend
 from unittest import TestCase
 from selenium.webdriver.ie.options import Options
+import sys
 
 users = 'users.xls'
 cases = 'cases.xls'
+try:
+ if (sys.argv[1] !=''):
+  cases = sys.argv[1]
+except Exception as ex: print(ex)
 
 UPlist =ReadExcel.readUsers(users)
 print(UPlist)
