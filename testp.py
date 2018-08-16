@@ -45,7 +45,7 @@ for arg in casesList[0:]:
          print(ex)
      #split data ,
      try:
-      if step==0:
+      if step==1:
        browser.get(datalist[0])
       else:
        browser.get(url)

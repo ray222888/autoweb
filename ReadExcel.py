@@ -38,7 +38,7 @@ def excelUpdate(resultstrclient):
     liststr=resultstrclient.split(':')
     excel=liststr[0]
     resultstr=liststr[1]
-    caseid=liststr[2]
+    caseid=int(liststr[2])
     wb = xlrd.open_workbook(excel)
     newb = copy(wb)
     wbsheet = newb.get_sheet(0)
