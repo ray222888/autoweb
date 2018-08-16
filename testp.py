@@ -9,6 +9,7 @@ import time
 import FillForm
 import FormValidation
 import ReadExcel
+import clientSend
 from unittest import TestCase
 from selenium.webdriver.ie.options import Options
 
@@ -26,7 +27,7 @@ for arg in casesList[0:]:
  datalist =arg.split(',')
  datalist.remove('')
  url=''
- step=0
+ step=1
  for arg in datalist[1:]:
      global listinput1
      browser = webdriver.Chrome()
@@ -103,10 +104,13 @@ for arg in casesList[0:]:
      if listinput1 == 'error':
         browser.get_screenshot_as_file(str(caserow)+'.png')
         ReadExcel.excelUpdate(cases,"Fail,"+str(caserow)+'.png',caserow)
+        clientSend.resultSend(cases+",Fail,"+str(caserow)+'.png,'+caserow)
         break
      else:
          ReadExcel.excelUpdate(cases,"Pass",caserow)
          browser.get_screenshot_as_file(str(caserow)+"_"+str(step)+'.png')
+         if (step==datalist.amount()):
+             clientSend.resultSend(cases+",Pass,"+caserow)
      #validate after preview,last submit
      #FormValidation.from_value(browser,listinput,cases,caserow,eventdatalist[1])
      url = browser.current_url
