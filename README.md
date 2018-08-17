@@ -39,3 +39,5 @@ git push -u origin master
 # test.sh 加s权限 chmod +s test.sh
 
 虚拟机和本机要同一内网
+update driver to lastest
+update port
