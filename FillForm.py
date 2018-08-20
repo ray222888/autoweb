@@ -61,9 +61,10 @@ def fill_from(object,strAction):
     for arg in es[0:]:
         try:
          if (arg.get_attribute('value') != ''):
+            print(arg.get_attribute('value'))
             continue
-        except:
-         print(arg)
+        except Exception as argx:
+         print(argx)
         if ((arg.get_attribute('placeholder') == 'Type your answer here...'  ) and ((arg.get_attribute('aria-label') == 'Email Address' ) or (arg.get_attribute('type') == 'email'))):
             try:
              arg.send_keys('test@epam.com')
@@ -131,11 +132,11 @@ def fill_from(object,strAction):
                 print(arg)        
         elif (arg.get_attribute('placeholder') == 'Type your answer here...'  ):
             try:
-                numberr =random.randint(12345678901234567890,123456789012345678901234567890)
-                arg.send_keys(numberr)
+                #numberrx =random.randint(12345678901234567890,123456789012345678901234567890)
+                arg.send_keys("12345678")
                 listinput.append(arg.get_attribute('value'))
-            except:
-                print(arg.get_attribute('class'))
+            except Exception as exa:
+                print(exa)
         else:
             try:
              arg.send_keys('1')
@@ -204,7 +205,7 @@ def fill_from(object,strAction):
 
 def login_from(object,username,password):
     browser=object
-    sleep(25)
+    sleep(30)
     try:
      user=browser.find_element_by_css_selector('#idToken1');
      user.send_keys(username);

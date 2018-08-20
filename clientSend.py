@@ -10,5 +10,5 @@ def resultSend(str):
  server.settimeout(0.2)
  server.bind(("", 44446))
  message = str
- server.sendto(message, ('<broadcast>', 37021))
+ server.sendto(message, ('<broadcast>', 37020))
  print("result message sent!")

@@ -117,7 +117,7 @@ for arg in casesList[0:]:
      else:
          ReadExcel.excelUpdate(cases+":Pass:"+str(caserow))
          browser.get_screenshot_as_file(str(caserow)+"_"+str(step)+'.png')
-         if (step==datalist.amount()):
+         if (step==len(datalist)):
              clientSend.resultSend(cases+":Pass:"+str(caserow))
      #validate after preview,last submit
      #FormValidation.from_value(browser,listinput,cases,caserow,eventdatalist[1])
