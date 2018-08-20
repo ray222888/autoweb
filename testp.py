@@ -74,9 +74,14 @@ for arg in casesList[0:]:
           eventdatalist[0]=UPlist[6]
      except:
       print('user file error')
-         
-     FillForm.login_from(browser,eventdatalist[0],UPlist[0])
-     
+
+     logininput=FillForm.login_from(browser,eventdatalist[0],UPlist[0])
+     if logininput == 'error':
+       browser.get_screenshot_as_file(str(caserow)+'.png')
+       ReadExcel.excelUpdate(cases+":Fail,"+str(caserow)+'.png:'+str(caserow))
+       clientSend.resultSend(cases+":Fail,"+str(caserow)+'.png:'+str(caserow))
+       break
+
      try:
       browser.switch_to.frame(browser.find_element_by_tag_name("iframe"))
 
