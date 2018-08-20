@@ -40,4 +40,7 @@ git push -u origin master
 
 虚拟机和本机要同一内网
 update driver to lastest
+
+update port forwards
 update port
+update excel file
